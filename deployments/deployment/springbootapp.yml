@@ -3,6 +3,8 @@ apiVersion: apps/v1
 kind: Deployment #= Pod = RS = RC = DS = SS
 metadata:
   name: springbootapp
+  labels:
+    app: springbootapp-deployment
 spec:
   replicas: 2
   selector:

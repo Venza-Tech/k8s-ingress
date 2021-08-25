@@ -5,7 +5,7 @@ metadata:
 spec:
   type: ClusterIP #LoadBalancer or NodePort – To receive external traffic ClusterIP –  If Nginx  run*,Traffic in
   selector:
-    app: springbootapp
+    app: mongo
   ports:
   - port: 80
     targetPort: 8080

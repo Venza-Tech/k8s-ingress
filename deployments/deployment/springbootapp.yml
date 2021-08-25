@@ -1,0 +1,30 @@
+## SpringBoot App  
+apiVersion: apps/v1
+kind: Deployment #= Pod = RS = RC = DS = SS
+metadata:
+  name: springbootapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: springbootapp
+  template:
+    metadata:
+      name: springapppod
+      labels:
+        app: springbootapp
+    spec:
+      containers:
+      - name: springappcontainer
+        image: mylandmarktech/spring-boot-mongo
+        ports:
+        - containerPort: 8080
+        env:
+        - name: MONGO_DB_USERNAME
+          value: devdb
+        - name: MONGO_DB_PASSWORD
+          value: devdb@123
+        - name: MONGO_DB_HOSTNAME
+          value: mongo #= serviceName of the database 
+---
+NOTE: No volume mount point bc not database app

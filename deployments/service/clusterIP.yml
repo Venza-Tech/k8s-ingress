@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: springbootapp-service
+  name: mongo
 spec:
   type: ClusterIP #LoadBalancer or NodePort – To receive external traffic ClusterIP –  If Nginx  run*,Traffic in
   selector:
-    app: mongo
+    app: mongodb
   ports:
   - port: 80
     targetPort: 8080
